@@ -35,6 +35,17 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            productOrService: 'Solid Carbide Drills',
+            message: ''
+          });
+    }, 2500);
   };
 
   const productAndServiceOptions = [
