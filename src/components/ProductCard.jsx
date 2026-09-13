@@ -11,15 +11,15 @@ export default function ProductCard({ product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-108"
+          className="w-full h-full object transition-transform duration-500 ease-out group-hover:scale-108"
         />
 
-        {/* Badge overlay */}
+        {/* Badge overlay
         <div className="absolute top-3 left-3">
           <span className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider bg-navy-900/90 text-slate-200 backdrop-blur-sm rounded border border-navy-700 shadow">
             {product.category || 'Precision Tool'}
           </span>
-        </div>
+        </div> */}
 
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="w-8 h-8 rounded-full bg-brandRed-600 text-white flex items-center justify-center shadow-glow-red">

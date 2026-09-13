@@ -98,11 +98,11 @@ export default function ProductDetail() {
                   }`}
                 />
 
-                <div className="absolute top-4 left-4">
+                {/* <div className="absolute top-4 left-4">
                   <span className="px-3 py-1.5 text-xs font-bold uppercase tracking-wider bg-navy-900/90 text-brandRed-400 backdrop-blur rounded border border-navy-700 shadow">
                     {product.category}
                   </span>
-                </div>
+                </div> */}
 
                 <div className="absolute bottom-4 right-4 bg-navy-900/80 backdrop-blur text-white text-xs px-3 py-1.5 rounded flex items-center gap-1.5 border border-navy-700 pointer-events-none">
                   <ZoomIn className="w-3.5 h-3.5 text-brandRed-500" />

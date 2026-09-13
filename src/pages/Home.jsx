@@ -45,12 +45,12 @@ export default function Home() {
                 <img
                   src="/images/machinery/widma-lx5-plus.png"
                   alt="Deccan Toolings 5-Axis CNC Precision Machinery"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
                 
                 {/* Floating Experience Badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-navy-900/90 backdrop-blur-md border border-navy-700 text-white flex items-center justify-between shadow-lg">
+                {/* <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-navy-900/90 backdrop-blur-md border border-navy-700 text-white flex items-center justify-between shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 rounded-lg bg-brandRed-600 flex items-center justify-center font-heading font-extrabold text-2xl text-white">
                       20+
@@ -64,7 +64,7 @@ export default function Home() {
                     <div className="text-xs uppercase font-bold text-brandRed-400">5-Axis CNC</div>
                     <div className="text-xs text-slate-300">Added in 2014</div>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Decorative background shape */}
@@ -232,13 +232,13 @@ export default function Home() {
                   <img
                     src={machine.image}
                     alt={machine.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3">
+                  {/* <div className="absolute top-3 left-3">
                     <span className="px-2.5 py-1 text-xs font-bold uppercase tracking-wider bg-brandRed-600 text-white rounded">
                       {machine.name}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="p-6">

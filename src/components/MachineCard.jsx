@@ -14,13 +14,13 @@ export default function MachineCard({
             src={machine.image}
             alt={machine.name}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute top-3 left-3">
+          {/* <div className="absolute top-3 left-3">
             <span className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider bg-navy-900/90 text-brandRed-400 backdrop-blur-sm rounded border border-navy-700">
               {variant === 'inspection' ? 'Inspection & Presetting' : 'Conventional Machining'}
             </span>
-          </div>
+          </div> */}
         </div>
 
         <div className="p-6 flex-1 flex flex-col justify-between">
@@ -73,13 +73,13 @@ export default function MachineCard({
             src={machine.image}
             alt={machine.name}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute top-4 left-4">
+          {/* <div className="absolute top-4 left-4">
             <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-brandRed-600 text-white rounded shadow-glow-red">
               5 Axis CNC Tool & Cutter Grinder
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* Machine Specs & Content */}

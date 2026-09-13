@@ -45,11 +45,11 @@ export default function About() {
                 <img
                   src="/images/machinery/widma-lx5.png"
                   alt="Deccan Toolings 5-Axis CNC Grinder"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
                 
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-navy-900/90 backdrop-blur-md border border-navy-700 text-white">
+                {/* <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-navy-900/90 backdrop-blur-md border border-navy-700 text-white">
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xs uppercase font-bold text-brandRed-400">Timeline Milestone</div>
@@ -57,7 +57,7 @@ export default function About() {
                     </div>
                     <Factory className="w-8 h-8 text-slate-400" />
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Milestones Card Below */}
