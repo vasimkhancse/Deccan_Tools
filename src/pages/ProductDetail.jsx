@@ -93,7 +93,7 @@ export default function ProductDetail() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className={`w-full h-full object-cover transition-transform duration-500 ${
+                  className={`w-full h-full object transition-transform duration-500 ${
                     isZoomed ? 'scale-150 cursor-zoom-out' : 'group-hover:scale-105'
                   }`}
                 />

@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-950 text-slate-300 border-t border-navy-800">
       {/* Top industrial banner */}
-      <div className="bg-navy-900 border-b border-navy-800 py-6">
+      {/* <div className="bg-navy-900 border-b border-navy-800 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-3">
@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
