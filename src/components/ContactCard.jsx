@@ -5,8 +5,8 @@ export default function ContactCard({ unit, isPrimary = false }) {
   return (
     <div className={`rounded-xl p-6 sm:p-8 border transition-all duration-300 flex flex-col justify-between ${
       isPrimary 
-        ? 'bg-navy-900 border-navy-700 text-white shadow-industrial-lg' 
-        : 'bg-white border-slate-200 text-slate-900 shadow-sm'
+        ? 'bg-navy-900 border-navy-700 text-white shadow-md' 
+        : 'bg-white border-slate-200 text-slate-900 shadow-md'
     }`}>
       <div>
         {/* Header */}

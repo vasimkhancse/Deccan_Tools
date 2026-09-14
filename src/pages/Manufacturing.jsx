@@ -77,7 +77,7 @@ export default function Manufacturing() {
             ))}
           </div>
 
-          <div className="mt-10 p-6 bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-10 p-6 bg-white rounded-xl border border-slate-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-3">
               <ShieldCheck className="w-8 h-8 text-brandRed-600 shrink-0" />
               <div>

@@ -4,7 +4,7 @@ import { ArrowUpRight, ShieldCheck, Wrench } from 'lucide-react';
 
 export default function ProductCard({ product }) {
   return (
-    <article className="group bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-industrial transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
+    <article className="group bg-white rounded-lg overflow-hidden border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
       {/* Image container with zoom effect */}
       <div className="relative aspect-[4/3] bg-navy-950 overflow-hidden border-b border-slate-100 flex items-center justify-center">
         <img

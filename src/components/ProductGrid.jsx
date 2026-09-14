@@ -25,7 +25,7 @@ export default function ProductGrid({ products, showFilters = true }) {
   return (
     <div className="space-y-8">
       {showFilters && (
-        <div className="bg-white p-4 md:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col md:flex-row gap-4 justify-between items-center">
+        <div className="bg-white p-4 md:p-6 rounded-lg border border-slate-200 shadow-md flex flex-col md:flex-row gap-4 justify-between items-center">
           {/* Search */}
           <div className="relative w-full md:w-80">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />

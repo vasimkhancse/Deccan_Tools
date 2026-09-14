@@ -304,7 +304,7 @@ export default function Contact() {
                 </h4>
 
                 {/* Coimbatore Unit Preview */}
-                <div className="bg-navy-950 text-white p-5 rounded-xl border border-navy-800 shadow-sm space-y-2">
+                <div className="bg-navy-950 text-white p-5 rounded-xl border border-navy-800 shadow-md space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider text-brandRed-400">Unit 1 • Coimbatore</span>
                     <MapPin className="w-4 h-4 text-brandRed-500" />
@@ -324,7 +324,7 @@ export default function Contact() {
                 </div>
 
                 {/* Chennai Unit Preview */}
-                <div className="bg-slate-100 text-slate-900 p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                <div className="bg-slate-100 text-slate-900 p-5 rounded-xl border border-slate-200 shadow-md space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider text-brandRed-600">Unit 2 • Chennai</span>
                     <MapPin className="w-4 h-4 text-brandRed-600" />

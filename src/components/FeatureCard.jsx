@@ -12,7 +12,7 @@ export default function FeatureCard({ feature, index }) {
   const IconComponent = iconMap[feature.icon] || ShieldCheck;
 
   return (
-    <div className="group relative bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-industrial transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden">
+    <div className="group relative bg-white rounded-xl p-8 border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden">
       {/* Top Accent Line */}
       <div className="absolute top-0 left-0 w-full h-1 bg-slate-200 group-hover:bg-brandRed-600 transition-colors duration-300"></div>
 

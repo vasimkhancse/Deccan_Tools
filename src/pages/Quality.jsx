@@ -101,7 +101,7 @@ export default function Quality() {
               return (
                 <div
                   key={idx}
-                  className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
+                  className="bg-white p-8 rounded-xl border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
                 >
                   <div>
                     <div className="w-12 h-12 rounded-lg bg-navy-900 group-hover:bg-brandRed-600 text-white flex items-center justify-center transition-colors mb-6 shadow">

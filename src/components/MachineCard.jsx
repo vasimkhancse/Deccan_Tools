@@ -8,7 +8,7 @@ export default function MachineCard({
 }) {
   if (variant === 'inspection' || variant === 'conventional') {
     return (
-      <div className="bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-industrial transition-all duration-300 flex flex-col h-full group">
+      <div className="bg-white rounded-lg overflow-hidden border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
         <div className="relative aspect-[4/3] bg-navy-950 overflow-hidden border-b border-slate-100 flex items-center justify-center">
           <img
             src={machine.image}
@@ -63,7 +63,7 @@ export default function MachineCard({
 
   // CNC Machine Alternating Layout
   return (
-    <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-industrial transition-all duration-300">
+    <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300">
       <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 items-center ${alternate ? 'lg:flex-row-reverse' : ''}`}>
         {/* Machine Image */}
         <div className={`lg:col-span-6 relative aspect-[4/3] lg:aspect-auto lg:h-[420px] bg-navy-950 overflow-hidden group ${

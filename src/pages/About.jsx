@@ -164,7 +164,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-900">
+            <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-md text-slate-900">
               <span className="text-xs font-bold uppercase tracking-wider text-brandRed-600">Expansion Facility</span>
               <h3 className="text-2xl font-bold uppercase mt-1">UNIT-2 (CHENNAI)</h3>
               <p className="mt-2 text-sm text-slate-600">
