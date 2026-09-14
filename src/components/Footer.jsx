@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, Cpu } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, ExternalLink, Navigation } from 'lucide-react';
 import { companyInfo } from '../data/companyInfo';
 
 export default function Footer() {
@@ -8,45 +8,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-navy-950 text-slate-300 border-t border-navy-800">
-      {/* Top industrial banner */}
-      {/* <div className="bg-navy-900 border-b border-navy-800 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded bg-brandRed-600/20 border border-brandRed-600 flex items-center justify-center text-brandRed-500">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-lg uppercase tracking-wider">
-                  DECCAN TOOLINGS
-                </h4>
-                <p className="text-xs text-slate-400">
-                  Precision Solid Carbide Cutting Tools Manufacturing & 5-Axis Re-Sharpening Technology
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <Link
-                to="/contact"
-                className="px-5 py-2.5 bg-brandRed-600 hover:bg-brandRed-700 text-white text-xs font-bold uppercase tracking-wider rounded shadow transition-all duration-200"
-              >
-                Request Tool Quote
-              </Link>
-              <Link
-                to="/manufacturing"
-                className="px-5 py-2.5 bg-navy-800 hover:bg-navy-700 text-slate-200 text-xs font-bold uppercase tracking-wider rounded border border-navy-700 transition-all duration-200"
-              >
-                View 5-Axis Setup
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Col 1: Company Profile */}
           <div className="space-y-4">
             <img 
@@ -167,44 +131,105 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Contact Information */}
-          <div className="space-y-4">
-            <h3 className="text-white font-bold text-base uppercase tracking-wider mb-4 border-l-2 border-brandRed-600 pl-2.5">
-              Contact Units
-            </h3>
+        </div>
 
-            {/* Coimbatore */}
-            <div className="text-xs space-y-1 bg-navy-900/70 p-3 rounded border border-navy-800">
-              <div className="font-bold text-brandRed-400 uppercase">Unit-1 (Coimbatore)</div>
-              <p className="text-slate-300">{companyInfo.units.unit1.addressLine1}, {companyInfo.units.unit1.addressLine2}</p>
-              <p className="text-slate-300">{companyInfo.units.unit1.cityStateZip}</p>
-              <div className="pt-1 flex items-center gap-1.5 text-slate-300 font-medium">
-                <Phone className="w-3.5 h-3.5 text-brandRed-500" />
-                <a href={`tel:${companyInfo.units.unit1.phone}`} className="hover:text-white">
-                  {companyInfo.units.unit1.phone} / 9566729173
-                </a>
+        {/* Dedicated Unit 1 & Unit 2 Google Maps / Locations Grid */}
+        <div className="mt-1 pt-8 border-t border-navy-800/80">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Unit 1 Map Card */}
+            <div className="bg-navy-900/60 rounded-xl border border-navy-800 overflow-hidden flex flex-col hover:border-navy-700 transition-all">
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-brandRed-950 text-brandRed-400 border border-brandRed-900/80">
+                      Unit-1 • Coimbatore
+                    </span>
+                    <span className="text-xs text-slate-400">Headquarters & Main Plant</span>
+                  </div>
+                  <h5 className="text-base font-bold text-white uppercase tracking-wide mt-1">
+                    Deccan Toolings — Coimbatore
+                  </h5>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                    {companyInfo.units.unit1.addressLine1}, {companyInfo.units.unit1.addressLine2}, {companyInfo.units.unit1.cityStateZip}
+                  </p>
+                    <a
+                      href={`tel:${companyInfo.units.unit1.phone}`}
+                      className="text-xs text-slate-400 mt-1 cursor-pointer"
+                      aria-label="Call Deccan Toolings"
+                    >
+                      Phone: <span className="text-slate-200">{companyInfo.units.unit1.phone}
+                        <a
+                      href={`tel:${9566729173}`}
+                      className="text-xs text-slate-400 mt-1 cursor-pointer"
+                      aria-label="Call Deccan Toolings"
+                    >
+                      <span className="text-slate-200"> / 9566729173</span>
+                      </a>
+                      </span>
+                      </a>
+                </div>
+
+              </div>
+
+              {/* Map Embed Frame */}
+              <div className="h-44 w-full bg-navy-950 border-t border-navy-800 relative">
+                <iframe
+                  title="Deccan Toolings Unit 1 Coimbatore Map"
+                  src="https://maps.google.com/maps?q=Deccan+Toolings+Valluvar+Nagar+Kamarajar+Road+Peelamedu+Coimbatore+641004&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0 filter grayscale-[40%] contrast-[110%] opacity-90 hover:opacity-100 hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
 
-            {/* Chennai */}
-            <div className="text-xs space-y-1 bg-navy-900/70 p-3 rounded border border-navy-800">
-              <div className="font-bold text-brandRed-400 uppercase">Unit-2 (Chennai)</div>
-              <p className="text-slate-300">{companyInfo.units.unit2.addressLine1}, {companyInfo.units.unit2.addressLine2}</p>
-              <p className="text-slate-300">{companyInfo.units.unit2.cityStateZip}</p>
-              <div className="pt-1 flex items-center gap-1.5 text-slate-300 font-medium">
-                <Phone className="w-3.5 h-3.5 text-brandRed-500" />
-                <a href={`tel:${companyInfo.units.unit2.contacts[0].phone}`} className="hover:text-white">
-                  {companyInfo.units.unit2.contacts[0].phone}
-                </a>
-              </div>
-            </div>
+            {/* Unit 2 Map Card */}
+            <div className="bg-navy-900/60 rounded-xl border border-navy-800 overflow-hidden flex flex-col hover:border-navy-700 transition-all">
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-brandRed-950 text-brandRed-400 border border-brandRed-900/80">
+                      Unit-2 • Chennai
+                    </span>
+                    <span className="text-xs text-slate-400">Chennai Manufacturing Branch</span>
+                  </div>
+                  <h5 className="text-base font-bold text-white uppercase tracking-wide mt-1">
+                    Deccan Toolings — Chennai
+                  </h5>
+                  <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                    {companyInfo.units.unit2.addressLine1}, {companyInfo.units.unit2.addressLine2}, {companyInfo.units.unit2.cityStateZip}
+                  </p>
+                    <a
+                      href={`tel:${companyInfo.units.unit2.contacts[0].phone}`}
+                      className="text-xs text-slate-400 mt-1 cursor-pointer"
+                      aria-label="Call Deccan Toolings"
+                    >
+                      Phone: <span className="text-slate-200">{companyInfo.units.unit2.contacts[0].phone}
+                        <a
+                      href={`tel:${9566729173}`}
+                      className="text-xs text-slate-400 mt-1 cursor-pointer"
+                      aria-label="Call Deccan Toolings"
+                    >
+                      <span className="text-slate-200"> / 9566729173</span>
+                      </a>
+                      </span>
+                      </a>
+                </div>
 
-            {/* Email */}
-            <div className="pt-1 text-xs flex items-center gap-2 text-slate-400">
-              <Mail className="w-3.5 h-3.5 text-brandRed-500" />
-              <a href={`mailto:${companyInfo.primaryEmail}`} className="hover:text-white transition-colors">
-                {companyInfo.primaryEmail}
-              </a>
+                
+              </div>
+
+              {/* Map Embed Frame */}
+              <div className="h-44 w-full bg-navy-950 border-t border-navy-800 relative">
+                <iframe
+                  title="Deccan Toolings Unit 2 Chennai Map"
+                  src="https://maps.google.com/maps?q=/DECCAN+TOOLINGS,+Plot+no-2,+Ponniaman+Nagar,+Maduravoyal,+Thiruverkadu,+Tamil+Nadu+600095&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0 filter grayscale-[40%] contrast-[110%] opacity-90 hover:opacity-100 hover:grayscale-0 transition-all"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

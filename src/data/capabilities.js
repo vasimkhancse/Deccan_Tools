@@ -11,6 +11,12 @@ export const manufacturingCapabilities = [
     quantity: 2,
     category: 'CNC 5-Axis Grinding'
   },
+   {
+    description: 'CNC TOOL AND CUTTER GRINDER',
+    make: 'GRINDSTAR W4 PRO',
+    quantity: 1,
+    category: 'CNC Multi-Axis Grinding'
+  },
   {
     description: 'ZOLLER SMILE 420 CNC INSPECTION MACHINE',
     make: 'ZOLLER',

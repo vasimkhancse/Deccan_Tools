@@ -74,7 +74,27 @@ export const cncMachinery = [
     system: 'ANCA AMC5 G2',
     software: 'Tool Room Module',
     highlight: 'Complex Geometry Grinding Specialist'
-  }
+  },
+  {
+    id: 'grindstar-w4-pro',
+    name: 'GRINDSTAR W4 PRO',
+    type: 'High Precision CNC Tool & Cutter Grinding Machine',
+    image: '/images/machinery/grindstar-w4-pro.png',
+    description: 'The GrindStar W4 Pro CNC machine is a versatile, computer-controlled machine that can perform a wide range of manufacturing operations with high accuracy and precision. It is designed to meet the demands of high output and precision manufacturing.',
+    suitableTools: [
+      'Ball Nose End Mills',
+      'Multi Helix End Mills',
+      'Roughing End Mills',
+      'Drills & Step Drills',
+      'Form Cutters',
+      'Reamers',
+      'Custom Special Tools'
+    ],
+    materials: ['Solid Carbide', 'HSS'],
+    system: 'Advanced Multi-Axis CNC System',
+    software: 'Precision Tool Grinding Software',
+    highlight: 'High Output & Micron-Level Precision'
+  },
 ];
 
 export const inspectionEquipment = [
