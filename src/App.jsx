@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
 import ScrollToTop from './components/ScrollToTop';
 import PageLoader from './components/PageLoader';
+import EnquiryPopupModal from './components/EnquiryPopupModal';
 
 // Pages
 import Home from './pages/Home';
@@ -70,6 +71,9 @@ export default function App() {
 
       {/* Floating WhatsApp and Phone quick contact buttons */}
       <FloatingContact />
+
+      {/* Automatic 5-second lead capture popup modal (one-time rule) */}
+      <EnquiryPopupModal />
     </div>
   );
 }

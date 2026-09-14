@@ -13,8 +13,10 @@ import {
   Clock, 
   MessageSquare, 
   Building, 
-  ExternalLink 
+  ExternalLink,
+  Loader2
 } from 'lucide-react';
+import { sendEnquiryEmail } from '../services/emailService';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,30 +24,43 @@ export default function Contact() {
     email: '',
     phone: '',
     company: '',
-    productOrService: 'Solid Carbide Drills',
     message: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
 
   useEffect(() => {
     document.title = "Contact Deccan Toolings | Coimbatore & Chennai Units";
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            company: '',
-            productOrService: 'Solid Carbide Drills',
-            message: ''
-          });
-    }, 2500);
+    if (formData.phone.length !== 10) {
+      setPhoneError('Please enter a valid 10-digit phone number');
+      return;
+    }
+    setPhoneError('');
+    setIsSubmitting(true);
+
+    try {
+      await sendEnquiryEmail({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company || 'Not specified',
+        message: formData.message,
+        source: 'Contact Page Enquiry Form',
+        subject: `Quick Lead Enquiry from ${formData.name} [Deccan Toolings]`
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Submission error:', err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   
@@ -125,7 +140,6 @@ export default function Contact() {
                           email: '',
                           phone: '',
                           company: '',
-                          productOrService: 'Solid Carbide Drills',
                           message: ''
                         });
                       }}
@@ -171,17 +185,33 @@ export default function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* Phone */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                          Phone Number *
-                        </label>
+                        <div className="flex justify-between items-center mb-1.5">
+                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700">
+                            Phone Number *
+                          </label>
+                          <span className={`text-[10px] font-bold ${formData.phone.length === 10 ? 'text-emerald-600' : 'text-slate-400'}`}>
+                            {formData.phone.length}/10 digits
+                          </span>
+                        </div>
                         <input
                           type="tel"
+                          inputMode="numeric"
                           required
+                          maxLength={10}
+                          pattern="[0-9]{10}"
+                          title="Please enter a valid 10-digit phone number"
                           value={formData.phone}
-                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                          placeholder="e.g. 9566729173"
-                          className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded focus:border-brandRed-500 focus:bg-white focus:outline-none transition-colors"
+                          onChange={(e) => {
+                            const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                            setFormData({...formData, phone: val});
+                            if (val.length === 10) setPhoneError('');
+                          }}
+                          placeholder="10-digit mobile number"
+                          className={`w-full px-4 py-2.5 text-sm bg-slate-50 border ${phoneError ? 'border-brandRed-500' : 'border-slate-300'} rounded focus:border-brandRed-500 focus:bg-white focus:outline-none transition-colors`}
                         />
+                        {phoneError && (
+                          <p className="text-[11px] text-brandRed-600 mt-1 font-semibold">{phoneError}</p>
+                        )}
                       </div>
 
                       {/* Company */}
@@ -218,10 +248,20 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center px-8 py-4 rounded text-sm font-bold uppercase tracking-wider text-white bg-brandRed-600 hover:bg-brandRed-700 transition-all shadow-glow-red hover:scale-101 cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center px-8 py-4 rounded text-sm font-bold uppercase tracking-wider text-white bg-brandRed-600 hover:bg-brandRed-700 transition-all shadow-glow-red hover:scale-101 disabled:opacity-75 cursor-pointer"
                     >
-                      <Send className="w-4 h-4 mr-2" />
-                      Send Enquiry
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          Sending Enquiry...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2" />
+                          Send Enquiry
+                        </>
+                      )}
                     </button>
                   </form>
                 )}

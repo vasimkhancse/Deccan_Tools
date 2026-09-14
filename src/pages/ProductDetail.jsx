@@ -16,8 +16,10 @@ import {
   Cpu, 
   Sparkles, 
   Layers,
-  ZoomIn
+  ZoomIn,
+  Loader2
 } from 'lucide-react';
+import { sendEnquiryEmail } from '../services/emailService';
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -28,6 +30,8 @@ export default function ProductDetail() {
   // Simple enquiry modal state
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,14 +60,43 @@ export default function ProductDetail() {
     .filter(p => p.id !== product.id)
     .slice(0, 4);
 
-  const handleEnquirySubmit = (e) => {
+  const handleEnquirySubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setEnquiryOpen(false);
-      setFormData({ name: '', email: '', phone: '', company: '', notes: '' });
-    }, 2500);
+    if (formData.phone.length !== 10) {
+      setPhoneError('Please enter a valid 10-digit phone number');
+      return;
+    }
+    setPhoneError('');
+    setIsSubmitting(true);
+
+    try {
+      await sendEnquiryEmail({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company || 'Not specified',
+        productOrService: product.name,
+        message: formData.notes,
+        source: `Product Page: ${product.name}`,
+        subject: `Product Enquiry: ${product.name} from ${formData.name}`
+      });
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setEnquiryOpen(false);
+        setFormData({ name: '', email: '', phone: '', company: '', notes: '' });
+      }, 2500);
+    } catch (err) {
+      console.error('Submission error:', err);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setEnquiryOpen(false);
+        setFormData({ name: '', email: '', phone: '', company: '', notes: '' });
+      }, 2500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -302,17 +335,33 @@ export default function ProductDetail() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                      Phone Number *
-                    </label>
+                    <div className="flex justify-between items-center mb-1">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700">
+                        Phone Number *
+                      </label>
+                      <span className={`text-[10px] font-bold ${formData.phone.length === 10 ? 'text-emerald-600' : 'text-slate-400'}`}>
+                        {formData.phone.length}/10 digits
+                      </span>
+                    </div>
                     <input
                       type="tel"
+                      inputMode="numeric"
                       required
+                      maxLength={10}
+                      pattern="[0-9]{10}"
+                      title="Please enter a valid 10-digit phone number"
                       value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      placeholder="e.g. 9876543210"
-                      className="w-full px-3 py-2 border border-slate-300 rounded focus:border-brandRed-500 focus:outline-none"
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                        setFormData({...formData, phone: val});
+                        if (val.length === 10) setPhoneError('');
+                      }}
+                      placeholder="10-digit mobile number"
+                      className={`w-full px-3 py-2 border ${phoneError ? 'border-brandRed-500' : 'border-slate-300'} rounded focus:border-brandRed-500 focus:outline-none`}
                     />
+                    {phoneError && (
+                      <p className="text-[11px] text-brandRed-600 mt-1 font-semibold">{phoneError}</p>
+                    )}
                   </div>
                 </div>
 
@@ -352,9 +401,17 @@ export default function ProductDetail() {
                   </button>
                   <button
                     type="submit"
-                    className="px-6 py-2 text-xs font-bold uppercase tracking-wider text-white bg-brandRed-600 hover:bg-brandRed-700 rounded shadow"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-6 py-2 text-xs font-bold uppercase tracking-wider text-white bg-brandRed-600 hover:bg-brandRed-700 disabled:opacity-75 rounded shadow"
                   >
-                    Submit Enquiry
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-3.5 h-3.5 mr-1.5 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      'Submit Enquiry'
+                    )}
                   </button>
                 </div>
               </form>
