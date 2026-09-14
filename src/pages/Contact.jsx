@@ -48,22 +48,7 @@ export default function Contact() {
     }, 2500);
   };
 
-  const productAndServiceOptions = [
-    'Solid Carbide Drills',
-    'Solid Carbide End Mills',
-    'Burnishing Drills',
-    'Solid Carbide Reamers',
-    'Taper End Mills',
-    'Woodruff Cutters',
-    'Custom Special Tools',
-    'Precision Broaching Tools',
-    'Carbide Brazed Cutters',
-    'Workrest Blades',
-    'Solid Carbide Gundrills',
-    'Tool Re-Sharpening & Regrinding Service',
-    'PVD Tool Recoating',
-    'Other Engineering Enquiry'
-  ];
+  
 
   return (
     <div className="bg-slate-50">
@@ -214,21 +199,7 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    {/* Product / Service */}
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Product / Service *
-                      </label>
-                      <select
-                        value={formData.productOrService}
-                        onChange={(e) => setFormData({...formData, productOrService: e.target.value})}
-                        className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded focus:border-brandRed-500 focus:bg-white focus:outline-none transition-colors"
-                      >
-                        {productAndServiceOptions.map((opt, idx) => (
-                          <option key={idx} value={opt}>{opt}</option>
-                        ))}
-                      </select>
-                    </div>
+                  
 
                     {/* Message */}
                     <div>
@@ -302,7 +273,7 @@ export default function Contact() {
                     No. 271/1, Valluvar Nagar, Kamarajar Road, Peelamedu, Coimbatore - 641004
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Kamarajar+Road+Peelamedu+Coimbatore"
+                    href="https://maps.app.goo.gl/fp1bURqPYLYLnz6v7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-xs font-bold text-slate-300 hover:text-white pt-1"
@@ -322,7 +293,7 @@ export default function Contact() {
                     No-2, Ponniamman Nagar, Metro City Road, Ayanambakkam, Chennai-60009
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Metro+City+Road+Ayanambakkam+Chennai"
+                    href="https://maps.app.goo.gl/cSKVwT4x4KEozEht7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-xs font-bold text-slate-700 hover:text-slate-900 pt-1"

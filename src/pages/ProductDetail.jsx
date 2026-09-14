@@ -104,10 +104,10 @@ export default function ProductDetail() {
                   </span>
                 </div> */}
 
-                <div className="absolute bottom-4 right-4 bg-navy-900/80 backdrop-blur text-white text-xs px-3 py-1.5 rounded flex items-center gap-1.5 border border-navy-700 pointer-events-none">
+                {/* <div className="absolute bottom-4 right-4 bg-navy-900/80 backdrop-blur text-white text-xs px-3 py-1.5 rounded flex items-center gap-1.5 border border-navy-700 pointer-events-none">
                   <ZoomIn className="w-3.5 h-3.5 text-brandRed-500" />
                   <span>Click to Zoom</span>
-                </div>
+                </div> */}
               </div>
 
               {/* Manufacturing & Re-sharpening Guarantee Box */}
@@ -187,13 +187,13 @@ export default function ProductDetail() {
 
               {/* Enquiry CTAs */}
               <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
-                <button
+                {/* <button
                   onClick={() => setEnquiryOpen(true)}
                   className="flex-1 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-sm font-bold uppercase tracking-wider text-white bg-brandRed-600 hover:bg-brandRed-700 transition-all shadow-glow-red hover:scale-102 cursor-pointer"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Request Tool Quote
-                </button>
+                </button> */}
 
                 <a
                   href={`tel:${companyInfo.primaryPhone}`}

@@ -177,10 +177,10 @@ export default function Coating() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="w-3.5 h-3.5 rounded-full" style={{ backgroundColor: coating.accentColor }}></span>
-                    <span className="text-[11px] font-mono text-slate-500">GRADE-0{idx + 1}</span>
+                    <span className="text-[13px] font-mono text-slate-500">GRADE-0{idx + 1}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold uppercase tracking-wider text-white group-hover:text-brandRed-400 transition-colors">
+                  <h3 className="text-2xl font-bold uppercase tracking-wider text-white group-hover:text-brandRed-400 transition-colors">
                     {coating.name}
                   </h3>
 
@@ -189,16 +189,16 @@ export default function Coating() {
                     <span>Appearance: {coating.color}</span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xl sm:text-sm text-slate-300 leading-relaxed">
                     {coating.description}
                   </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-navy-800/80">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                  <div className="text-[13px] font-bold uppercase tracking-wider text-slate-500 mb-1">
                     Best Suited For:
                   </div>
-                  <p className="text-xs text-brandRed-400 font-medium">
+                  <p className="text-[13px] text-brandRed-400 font-medium">
                     {coating.bestFor}
                   </p>
                 </div>
