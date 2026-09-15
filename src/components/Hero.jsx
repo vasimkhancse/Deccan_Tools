@@ -8,36 +8,42 @@ export default function Hero() {
       id: 'banner-1',
       title: 'Deccan Toolings - Carbide Tools For Auto Industry',
       image: '/images/banners/banner-1.png',
+      mobileImage: '/images/banners/banner-1-mobile.png',
       linkTo: '/products'
     },
     {
       id: 'banner-2',
       title: 'Deccan Toolings - Highly Specialized Tools',
       image: '/images/banners/banner-2.png',
+      mobileImage: '/images/banners/banner-2-mobile.png',
       linkTo: '/products/special-tools'
     },
     {
       id: 'banner-3',
       title: 'Deccan Toolings - Precision Reamers & Cutters',
       image: '/images/banners/banner-3.png',
+      mobileImage: '/images/banners/banner-3-mobile.png',
       linkTo: '/products/reamers'
     },
     {
       id: 'banner-4',
       title: 'Deccan Toolings - Product Portfolio',
       image: '/images/banners/banner-4.png',
+      mobileImage: '/images/banners/banner-4-mobile.png',
       linkTo: '/products'
     },
     {
       id: 'banner-5',
       title: 'Deccan Toolings - 5-Axis CNC Manufacturing Facilities',
       image: '/images/banners/banner-5.png',
+      mobileImage: '/images/banners/banner-5-mobile.png',
       linkTo: '/manufacturing'
     },
     {
       id: 'banner-6',
       title: 'Deccan Toolings - PVD Coating Solutions',
       image: '/images/banners/banner-6.png',
+      mobileImage: '/images/banners/banner-6-mobile.png',
       linkTo: '/coating'
     }
   ];
@@ -67,12 +73,18 @@ export default function Hero() {
               className="block w-full h-full cursor-pointer relative group"
               title={`Click to view ${banner.title}`}
             >
-              <img
+              <picture className="block w-full">
+                <source
+                  media="(max-width: 639px)"
+                  srcSet={banner.mobileImage}
+                />
+                <img
                 src={banner.image}
                 alt={banner.title}
                 className="w-full h-auto min-h-[250px] sm:min-h-[500px] md:min-h-[500px] lg:min-h-[500px] max-h-[500px]   transition-transform duration-500 group-hover:scale-[1.01]"
                 loading="eager"
-              />
+                />
+              </picture>
             </Link>
           </div>
         ))}

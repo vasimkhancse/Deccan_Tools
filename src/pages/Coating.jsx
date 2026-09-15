@@ -75,7 +75,7 @@ export default function Coating() {
                 <img
                   src="/images/coating/pvd-coating.png"
                   alt="Advanced PVD Coating Technology"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
