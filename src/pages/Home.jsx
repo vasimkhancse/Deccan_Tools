@@ -106,7 +106,7 @@ export default function Home() {
           {/* Why Choose Us Carousel */}
           <Carousel
             autoplay={true}
-            autoplayInterval={4000}
+            autoplayInterval={2000}
             pauseOnHover={true}
             showArrows={true}
             showDots={true}
@@ -154,7 +154,7 @@ export default function Home() {
           {/* Reusable Product Carousel (4 desktop, 2-3 tablet, 1 mobile) */}
           <Carousel
             autoplay={true}
-            autoplayInterval={4000}
+            autoplayInterval={2000}
             pauseOnHover={true}
             showArrows={true}
             showDots={true}
@@ -195,7 +195,7 @@ export default function Home() {
           {/* 6-step Re-Sharpening Process Carousel */}
           <Carousel
             autoplay={true}
-            autoplayInterval={3500}
+            autoplayInterval={2000}
             pauseOnHover={true}
             showArrows={true}
             showDots={true}
@@ -272,7 +272,7 @@ export default function Home() {
           {/* Machinery Carousel (2-3 desktop, 2 tablet, 1 mobile) */}
           <Carousel
             autoplay={true}
-            autoplayInterval={4500}
+            autoplayInterval={2000}
             pauseOnHover={true}
             showArrows={true}
             showDots={true}
@@ -285,7 +285,7 @@ export default function Home() {
             {cncMachinery.map((machine) => (
               <div
                 key={machine.id}
-                className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-industrial transition-all duration-300 flex flex-col justify-between group h-full"
+                className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-full"
               >
                 <div className="relative aspect-[16/10] bg-navy-950 overflow-hidden">
                   <img

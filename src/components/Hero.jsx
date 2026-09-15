@@ -46,7 +46,7 @@ export default function Hero() {
     <section className="relative w-full bg-white border-b border-slate-200 overflow-hidden select-none">
       <Carousel
         autoplay={true}
-        autoplayInterval={5000}
+        autoplayInterval={2000}
         pauseOnHover={true}
         showArrows={true}
         showDots={true}
