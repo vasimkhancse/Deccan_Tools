@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Breadcrumb from '../components/Breadcrumb';
+import PageBanner from '../components/PageBanner';
 import SectionTitle from '../components/SectionTitle';
 import MachineCard from '../components/MachineCard';
 import CTASection from '../components/CTASection';
@@ -15,31 +15,16 @@ export default function Inspection() {
   return (
     <div className="bg-slate-50">
       {/* Banner */}
-      <section className="bg-navy-950 text-white py-16 lg:py-20 border-b border-navy-800 relative">
-        <div className="absolute inset-0 industrial-grid-dark opacity-30"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb 
-            items={[
-              { label: 'Manufacturing', to: '/manufacturing' },
-              { label: 'Inspection' }
-            ]} 
-            dark={true} 
-          />
-
-          <div className="mt-6 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded text-xs font-bold uppercase tracking-widest bg-brandRed-950/80 text-brandRed-400 border border-brandRed-900/60 mb-4">
-              <Shield className="w-3.5 h-3.5" />
-              <span>Micron-Level Metrology & Tool Presetting</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white">
-              Inspection & Precision Measurement
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-              Equipped with high-end optical presetting systems, computerized image processing, and profile projectors to guarantee cutting edge accuracy before dispatch.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageBanner
+        desktopImage="/images/section_banners/banner-quality.png"
+        mobileImage="/images/section_banners/banner-quality-mobile.png"
+        alt="Inspection & Precision Measurement - Quality Assurance Process"
+        title="Inspection & Precision Measurement"
+        breadcrumbItems={[
+          { label: 'Manufacturing', to: '/manufacturing' },
+          { label: 'Inspection' }
+        ]}
+      />
 
       {/* Equipment Cards Grid */}
       <section className="py-20 lg:py-28 bg-white border-b border-slate-200">

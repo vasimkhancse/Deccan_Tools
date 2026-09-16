@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Breadcrumb from '../components/Breadcrumb';
+import PageBanner from '../components/PageBanner';
 import SectionTitle from '../components/SectionTitle';
 import CTASection from '../components/CTASection';
 import { coatingBenefits, coatingTypes } from '../data/coatings';
@@ -32,38 +32,13 @@ export default function Coating() {
   return (
     <div className="bg-slate-50 text-slate-900 selection:bg-brandRed-600 selection:text-white">
       {/* 1. Header Banner */}
-      <section className="relative py-16 lg:py-24 bg-navy-950 text-white border-b border-navy-800 overflow-hidden">
-        <div className="absolute inset-0 industrial-grid-dark opacity-35"></div>
-        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brandRed-600/15 blur-3xl pointer-events-none"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: 'Coating' }]} dark={true} />
-
-          <div className="mt-8 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded text-xs font-bold uppercase tracking-widest bg-brandRed-950/80 text-brandRed-400 border border-brandRed-900/60 mb-4">
-              <Layers className="w-3.5 h-3.5" />
-              <span>Physical Vapor Deposition (PVD) Technology</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight">
-              Advanced PVD Coating Solutions
-            </h1>
-
-            {/* Main Statement */}
-            <div className="mt-6 flex items-center space-x-4 text-2xl sm:text-3xl font-heading font-extrabold tracking-widest text-brandRed-500">
-              <span>HARD.</span>
-              <span>•</span>
-              <span className="text-white">SHARP.</span>
-              <span>•</span>
-              <span className="text-slate-300">DURABLE.</span>
-            </div>
-
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              High-performance PVD coatings designed to withstand extreme thermal stresses, abrasive cutting conditions, and aggressive metal removal rates.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageBanner
+        desktopImage="/images/section_banners/banner-coating.png"
+        mobileImage="/images/section_banners/banner-coating-mobile.png"
+        alt="Advanced PVD Coatings Solutions - Surface Engineering for Superior Performance"
+        title="Advanced PVD Coating Solutions"
+        breadcrumbItems={[{ label: 'Coating' }]}
+      />
 
       {/* 2. Visual & Main Statement Section */}
       <section className="py-10 bg-white border-b border-slate-200 relative">

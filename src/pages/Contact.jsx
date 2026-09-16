@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Breadcrumb from '../components/Breadcrumb';
+import PageBanner from '../components/PageBanner';
 import SectionTitle from '../components/SectionTitle';
 import ContactCard from '../components/ContactCard';
 import { companyInfo } from '../data/companyInfo';
@@ -63,30 +63,16 @@ export default function Contact() {
     }
   };
 
-  
-
   return (
     <div className="bg-slate-50">
       {/* Banner */}
-      <section className="bg-navy-950 text-white py-16 lg:py-20 border-b border-navy-800 relative">
-        <div className="absolute inset-0 industrial-grid-dark opacity-30"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: 'Contact Us' }]} dark={true} />
-
-          <div className="mt-6 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded text-xs font-bold uppercase tracking-widest bg-brandRed-950/80 text-brandRed-400 border border-brandRed-900/60 mb-4">
-              <Phone className="w-3.5 h-3.5" />
-              <span>Direct Manufacturing & Engineering Inquiries</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white">
-              Contact Deccan Toolings
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-              Reach out to our manufacturing units in Coimbatore and Chennai for tool manufacturing, customized geometries, and re-sharpening technology.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageBanner
+        desktopImage="/images/section_banners/banner-contact.png"
+        mobileImage="/images/section_banners/banner-contact-mobile.png"
+        alt="Contact Deccan Toolings - Let's Build A Stronger Tomorrow Together"
+        title="Contact Deccan Toolings"
+        breadcrumbItems={[{ label: 'Contact Us' }]}
+      />
 
       {/* Unit Cards Section */}
       <section className="py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
