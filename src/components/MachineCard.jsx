@@ -9,7 +9,7 @@ export default function MachineCard({
   if (variant === 'inspection' || variant === 'conventional') {
     return (
       <div className="bg-white rounded-lg overflow-hidden border border-slate-200 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-        <div className="relative aspect-[4/3] bg-navy-950 overflow-hidden border-b border-slate-100 flex items-center justify-center">
+        <div className="relative aspect-[2/2] bg-navy-950 overflow-hidden border-b border-slate-100 flex items-center justify-center">
           <img
             src={machine.image}
             alt={machine.name}

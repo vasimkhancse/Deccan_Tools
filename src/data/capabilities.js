@@ -52,5 +52,17 @@ export const manufacturingCapabilities = [
     make: 'SPERONI',
     quantity: 1,
     category: 'Tool Presetting'
+  },
+  {
+    description: 'PRECISION CYLINDRICAL GRINDER',
+    make: 'SHIGIYA GP-30B',
+    quantity: 1,
+    category: 'Cylindrical Grinding'
+  },
+  {
+    description: 'FIBER LASER MARKING MACHINE 20W',
+    make: 'AC ASPIRE',
+    quantity: 1,
+    category: 'Laser Marking & Identification'
   }
 ];

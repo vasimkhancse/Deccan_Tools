@@ -174,5 +174,34 @@ export const conventionalMachinery = [
       'High roundness and concentricity tolerances',
       'Consistent OD grinding for solid carbide blanks'
     ]
+  },
+  {
+    id: 'shigiya-gp30b',
+    name: 'SHIGIYA GP-30(40)B',
+    type: 'High Precision Cylindrical Grinding Machine',
+    image: '/images/conventional/shigiya-gp30b.png',
+    description: 'Heavy-duty precision cylindrical grinder engineered for tool blank preparation, accurate shank sizing, concentric diameter grinding, and outer diameter (OD) finishing of solid carbide and high-speed steel tools.',
+    features: [
+      'High-rigidity cast iron machine bed for thermal stability and vibration dampening',
+      'Sub-micron OD cylindrical grinding and shank sizing tolerances (< 1 µm)',
+      'Dead-center / live-center precision workhead system for minimal runout',
+      'Micro-feed wheelhead adjustment for precision diameter grinding',
+      'Consistent OD grinding for carbide tool blanks and specialized step shafts'
+    ]
+  },
+  {
+    id: 'aspire-20w-laser',
+    name: 'ASPIRE STD 20W FIBER LASER',
+    type: 'Fiber Laser Marking & Identification Machine',
+    image: '/images/machinery/aspire-20w-laser.webp',
+    system: 'Sino-Galvo F-Theta Optical Head & i3 Controller',
+    description: 'Dedicated 20W fiber laser marking station engineered for ultra-crisp, permanent identification, laser etching of tool specifications, flute diameters, and 2D DataMatrix traceability codes on solid carbide and HSS cutting tools.',
+    features: [
+      'High-speed Sino-Galvo scanner head with 150×150 mm marking area',
+      '600mm motorized Indian Z-axis with AC beam delivery',
+      'Permanent micro-etching of tool geometries and custom customer branding',
+      'High-contrast, non-contact thermal marking preserving cutting edge integrity',
+      '350×350 mm aluminum working plate with dedicated industrial i3 workstation'
+    ]
   }
 ];
